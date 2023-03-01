@@ -1,6 +1,6 @@
-{% extends 'base.html'%}
-{% block content % }
-<form method="post">
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" class="buttons">
     <h3>Enter The Chat Room</h3>
     <div>
         <label>Name:</label>
@@ -10,9 +10,12 @@
         <input type="text" placeholder=" Room code" name="code" value="{{code}}">
         <button type="submit" name="join"> Join a Room</button>
     </div>
-    <div>
-        <button type="submit" name="create">Create a Room</button>
-    </div>
-
+    
+    <button type="submit" name="create" class="create">Create a Room</button>
+    {% if erro %}
+    <ul>
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
 </form>
-{%endblock%}
+{% endblock %}
